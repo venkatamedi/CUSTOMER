@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="6.4.1.4">
+  <Name>vdb</Name>
+  <RootView>IIDF</RootView>
+  <LuLazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnIIDFCheckExtractFromSourceInd</DecisionFunction>
+  </LuLazyDataUpdate>
+  <EventsList />
+  <IidFinderProp>
+    <OrderValidationTime>00:05:00</OrderValidationTime>
+    <HistoryStoreTime>7.00:00:00</HistoryStoreTime>
+    <DeltaSyncMethod>TimeInterval</DeltaSyncMethod>
+    <DeltaSyncTimeInterval>00:00:00</DeltaSyncTimeInterval>
+  </IidFinderProp>
+  <Tables>
+    <Table>activity</Table>
+    <Table>address</Table>
+    <Table>balance</Table>
+    <Table>case_note</Table>
+    <Table>case_note_crossiid</Table>
+    <Table>cases</Table>
+    <Table>cases_crossiid</Table>
+    <Table>contact</Table>
+    <Table>contact_link</Table>
+    <Table>contract</Table>
+    <Table>customer</Table>
+    <Table>IIDF</Table>
+    <Table>IIDF_QUEUE</Table>
+    <Table>IIDF_RECENT_UPDATES</Table>
+    <Table>invoice</Table>
+    <Table>mcc_country</Table>
+    <Table>mcc_country_crossiid</Table>
+    <Table>mcc_mnc</Table>
+    <Table>mcc_mnc_quotes</Table>
+    <Table>mcc_mnc_quotes_crossiid</Table>
+    <Table>mnc_words</Table>
+    <Table>payment</Table>
+    <Table>sim_name</Table>
+    <Table>subscriber</Table>
+  </Tables>
+  <TablesProperties>
+    <TableProperties name="activity">
+      <Populations>
+        <Population name="query_public_activity" order="4" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="address">
+      <Populations>
+        <Population name="query_public_address" order="4" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="balance">
+      <Populations>
+        <Population name="query_public_balance" order="6" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="cases">
+      <Populations>
+        <Population name="query_public_cases" order="5" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="cases_crossiid">
+      <Populations>
+        <Population name="query_public_cases_crossiid" order="5" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="case_note">
+      <Populations>
+        <Population name="query_public_case_note" order="6" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="case_note_crossiid">
+      <Populations>
+        <Population name="query_public_case_note_crossiid" order="6" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="contact">
+      <Populations>
+        <Population name="query_public_contact" order="5" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="contact_link">
+      <Populations>
+        <Population name="query_public_contact_link" order="4" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="contract">
+      <Populations>
+        <Population name="query_public_contract" order="4" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="customer">
+      <Populations>
+        <Population name="query_public_customer" order="3" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="IIDF">
+      <Populations>
+        <Population name="query_IIDF" order="2" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="IIDF_QUEUE">
+      <Populations>
+        <Population name="query_iidf_queue" order="99" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="IIDF_RECENT_UPDATES">
+      <Populations>
+        <Population name="query_iidf_recent_updates" order="3" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="invoice">
+      <Populations>
+        <Population name="query_public_invoice" order="6" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="mcc_country">
+      <Populations>
+        <Population name="query_public_mcc_country" order="7" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="mcc_country_crossiid">
+      <Populations>
+        <Population name="query_mcc_country_crossiid" order="8" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="mcc_mnc">
+      <Populations>
+        <Population name="query_public_mcc_mnc" order="6" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="mcc_mnc_quotes">
+      <Populations>
+        <Population name="query_public_mcc_mnc_quotes" order="7" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="mcc_mnc_quotes_crossiid">
+      <Populations>
+        <Population name="query_mcc_mnc_quotes_crossiid" order="7" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="mnc_words">
+      <Populations>
+        <Population name="query_public_mnc_words" order="7" disabled="true" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="payment">
+      <Populations>
+        <Population name="query_public_payment" order="7" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="sim_name">
+      <Populations>
+        <Population name="query_public_sim_name" order="6" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="subscriber">
+      <Populations>
+        <Population name="query_public_subscriber" order="5" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList>
+    <Item order="1" active="true" name="IIDF" columnName="fnIIDFCheckIfInstanceFound" type="Table" />
+    <Item order="2" active="true" name="IIDF" columnName="fnIIDFInsertIIDStats" type="Table" />
+    <Item order="3" active="true" name="IIDF" columnName="fnIIDFCleanThreadGlobals" type="Table" />
+  </EnrichmentsOrderList>
+  <ReferencesList />
+  <Relations />
+  <DatabaseRelations>
+    <Relation>
+      <From tableType="TableObject" table="customer" column="customer_id" columnId="tblCol_06b901f6fc4e4511b80bcb2e52281a70" />
+      <To tableType="TableObject" table="activity" populationObjectName="query_public_activity" column="customer_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="customer" column="customer_id" columnId="tblCol_06b901f6fc4e4511b80bcb2e52281a70" />
+      <To tableType="TableObject" table="address" populationObjectName="query_public_address" column="customer_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="customer" column="customer_id" columnId="tblCol_06b901f6fc4e4511b80bcb2e52281a70" />
+      <To tableType="TableObject" table="contact_link" populationObjectName="query_public_contact_link" column="customer_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="customer" column="customer_id" columnId="tblCol_06b901f6fc4e4511b80bcb2e52281a70" />
+      <To tableType="TableObject" table="contract" populationObjectName="query_public_contract" column="customer_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="activity" column="activity_id" columnId="tblCol_88470802febb4efb8aacc7f08702b99b" />
+      <To tableType="TableObject" table="cases" populationObjectName="query_public_cases" column="activity_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="cases" column="case_id" columnId="tblCol_efef75be1fe746deb5080c0262e4ffd4" />
+      <To tableType="TableObject" table="case_note" populationObjectName="query_public_case_note" column="case_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="contract" column="contract_id" columnId="tblCol_07d127a2e08f4368b5a1dfc3b8566bad" />
+      <To tableType="TableObject" table="subscriber" populationObjectName="query_public_subscriber" column="subscriber_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="subscriber" column="subscriber_id" columnId="tblCol_ff4f3cd37715462da0607955f3600c8c" />
+      <To tableType="TableObject" table="balance" populationObjectName="query_public_balance" column="subscriber_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="subscriber" column="subscriber_id" columnId="tblCol_ff4f3cd37715462da0607955f3600c8c" />
+      <To tableType="TableObject" table="invoice" populationObjectName="query_public_invoice" column="subscriber_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="invoice" column="invoice_id" columnId="tblCol_f3e3ac864bf74c749bfd02b491bc6f4d" />
+      <To tableType="TableObject" table="payment" populationObjectName="query_public_payment" column="invoice_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="IIDF" column="IID" columnId="tblCol_55bbb1eee3034c8d891320b17f47d7f1" />
+      <To tableType="TableObject" table="customer" populationObjectName="query_public_customer" column="ssn" columnId="queryCol_1" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="IIDF" column="IID" columnId="tblCol_55bbb1eee3034c8d891320b17f47d7f1" />
+      <To tableType="TableObject" table="IIDF_RECENT_UPDATES" populationObjectName="query_iidf_recent_updates" column="IID" columnId="fi_75.0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="IIDF" column="IID" columnId="tblCol_55bbb1eee3034c8d891320b17f47d7f1" />
+      <To tableType="TableObject" table="IIDF_QUEUE" populationObjectName="query_iidf_queue" column="IID" columnId="fi_30.0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="contact_link" column="contact_id" columnId="tblCol_8a7026f9ae34465db165e8c3bd47f7be" />
+      <To tableType="TableObject" table="contact" populationObjectName="query_public_contact" column="contact_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="subscriber" column="imsi" columnId="tblCol_e3f464abccc24f39a7e34296e527fff5" />
+      <To tableType="TableObject" table="mcc_mnc" populationObjectName="query_public_mcc_mnc" column="imsi" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc" column="mcc" columnId="tblCol_118ae11346fc4e9c8d0d3496102200dc" />
+      <To tableType="TableObject" table="mcc_country" populationObjectName="query_public_mcc_country" column="mcc" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc" column="mcc" columnId="tblCol_118ae11346fc4e9c8d0d3496102200dc" />
+      <To tableType="TableObject" table="mcc_mnc_quotes" populationObjectName="query_public_mcc_mnc_quotes" column="mcc" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc" column="mnc" columnId="tblCol_ab229eee99eb4678a301fce60253793d" />
+      <To tableType="TableObject" table="mcc_mnc_quotes" populationObjectName="query_public_mcc_mnc_quotes" column="mnc" columnId="queryCol_1" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="subscriber" column="sim" columnId="tblCol_78922ecf245c4d00968dcd3c990549b7" />
+      <To tableType="TableObject" table="sim_name" populationObjectName="query_public_sim_name" column="sim" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc" column="mnc" columnId="tblCol_ab229eee99eb4678a301fce60253793d" />
+      <To tableType="TableObject" table="mnc_words" populationObjectName="query_public_mnc_words" column="mnc" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="cases_crossiid" column="case_id" columnId="tblCol_a2c912bd9bd340b29c6ab25ed6537637" />
+      <To tableType="TableObject" table="case_note_crossiid" populationObjectName="query_public_case_note_crossiid" column="case_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="activity" column="activity_id" columnId="tblCol_88470802febb4efb8aacc7f08702b99b" />
+      <To tableType="TableObject" table="cases_crossiid" populationObjectName="query_public_cases_crossiid" column="activity_id" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc" column="mcc" columnId="tblCol_118ae11346fc4e9c8d0d3496102200dc" />
+      <To tableType="TableObject" table="mcc_mnc_quotes_crossiid" populationObjectName="query_mcc_mnc_quotes_crossiid" column="mcc" columnId="queryCol_0" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc" column="mnc" columnId="tblCol_ab229eee99eb4678a301fce60253793d" />
+      <To tableType="TableObject" table="mcc_mnc_quotes_crossiid" populationObjectName="query_mcc_mnc_quotes_crossiid" column="mnc" columnId="queryCol_1" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="mcc_mnc_quotes_crossiid" column="mcc" columnId="tblCol_cead82a117824b6bad79497f7b77be7e" />
+      <To tableType="TableObject" table="mcc_country_crossiid" populationObjectName="query_mcc_country_crossiid" column="mcc" columnId="queryCol_0" />
+    </Relation>
+  </DatabaseRelations>
+  <PreVCsSqlScript />
+  <PostVCsSqlScript />
+  <Indexes />
+  <LudbProperties />
+  <DiagramGraph>
+    <Graph version="6.4.1.4" name="vdb.k2vdb.xml">
+      <Node name="customer" pos="313 564" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="activity" pos="388 122" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="cases" pos="917 14" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="case_note" pos="1219 14" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="address" pos="615 539" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="contact_link" pos="615 739" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="contract" pos="615 939" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="subscriber" pos="917 939" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="balance" pos="1219 414" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="invoice" pos="1219 614" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="payment" pos="1521 589" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="IIDF" pos="11 764" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="IIDF_QUEUE" pos="313 964" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="IIDF_RECENT_UPDATES" pos="313 764" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="contact" pos="917 739" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="mcc_mnc" pos="1219 939" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="mcc_country" pos="1521 789" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="mcc_mnc_quotes" pos="1823 1014" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="sim_name" pos="1219 1139" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="mnc_words" pos="1521 1039" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="cases_crossiid" pos="917 214" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="case_note_crossiid" pos="1219 213.999985" size="257 136.000015" listGroupSize="250 100" viewType="Table" />
+      <Node name="mcc_mnc_quotes_crossiid" pos="1819.842 1195.05249" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="mcc_country_crossiid" pos="2125 1214" size="257 136" listGroupSize="250 100" viewType="Table" />
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>

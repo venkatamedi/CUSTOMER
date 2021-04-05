@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>case_note_crossiid</Name>
+  <ID>tbl_case_note_crossiid</ID>
+  <Version>6.2.3.2</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="case_id" id="tblCol_5e48c991253a4793971449989ebb5d6a" index="0" datatype="Integer" mandatory="true" serializationName="case_id" />
+    <Column name="note_id" id="tblCol_e03c16a0c49542968aaf194091afaac4" index="1" datatype="Integer" mandatory="true" serializationName="note_id" />
+    <Column name="note_date" id="tblCol_d265b581732641969f1bf9306659311d" index="2" datatype="Text" mandatory="true" serializationName="note_date" />
+    <Column name="note_text" id="tblCol_ed19de4a9ba04a0f8eb5bcba290b9d3e" index="3" datatype="Text" mandatory="true" serializationName="note_text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_5e48c991253a4793971449989ebb5d6a,tblCol_e03c16a0c49542968aaf194091afaac4" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

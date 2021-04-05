@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>mcc_mnc</Name>
+  <ID>tbl_mcc_mnc</ID>
+  <Columns>
+    <Column name="imsi" id="tblCol_da0a2f5aebd246348a8f2be7142c63de" index="0" datatype="Text" mandatory="true" />
+    <Column name="mcc" id="tblCol_118ae11346fc4e9c8d0d3496102200dc" index="1" datatype="Text" />
+    <Column name="mnc" id="tblCol_ab229eee99eb4678a301fce60253793d" index="2" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_da0a2f5aebd246348a8f2be7142c63de" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

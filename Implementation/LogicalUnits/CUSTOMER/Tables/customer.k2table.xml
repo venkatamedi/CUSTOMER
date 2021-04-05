@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>customer</Name>
+  <ID>tbl_customer</ID>
+  <EntityId>tblCol_7321aba792654e67bb47c9aa465eadf0</EntityId>
+  <Columns>
+    <Column name="customer_id" id="tblCol_06b901f6fc4e4511b80bcb2e52281a70" index="0" datatype="Integer" mandatory="true" />
+    <Column name="ssn" id="tblCol_7321aba792654e67bb47c9aa465eadf0" index="1" datatype="Text" />
+    <Column name="first_name" id="tblCol_59dfa1a16186400aa48f404d35a0e948" index="2" datatype="Text" />
+    <Column name="last_name" id="tblCol_bfca634953a340ea86ca19312707cb23" index="3" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_06b901f6fc4e4511b80bcb2e52281a70" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

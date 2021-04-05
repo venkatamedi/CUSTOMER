@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JobsGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Jobs</Name>
+  <Jobs>
+    <Job methodName="CustomerUpdatesConsumerJob" jobName="CustomerUpdatesConsumerJob" active="true">
+      <ExecutionMode>Manually</ExecutionMode>
+      <ScheduleType>TimeInterval</ScheduleType>
+      <ExecuteEvery>00:00:00</ExecuteEvery>
+      <InputParams />
+    </Job>
+    <Job methodName="MyTopicConsumeJob" jobName="MyTopicConsumeJob" active="true">
+      <ExecutionMode>Manually</ExecutionMode>
+      <ScheduleType>TimeInterval</ScheduleType>
+      <ExecuteEvery>00:00:00</ExecuteEvery>
+      <InputParams />
+    </Job>
+  </Jobs>
+  <InterfaceListeners />
+</JobsGroup>

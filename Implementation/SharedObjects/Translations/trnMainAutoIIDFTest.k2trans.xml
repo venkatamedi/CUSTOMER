@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Translation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>trnMainAutoIIDFTest</Name>
+  <InputNotFoundAction>Use_Default</InputNotFoundAction>
+  <SchemaColumns>
+    <Column>
+      <Title>TEST_ID</Title>
+      <ColumnName>TEST_ID</ColumnName>
+      <Direction>Input</Direction>
+      <Type>Integer</Type>
+      <Length>3</Length>
+      <Format />
+      <Index>0</Index>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Sequence number for Test Scenario</Comment>
+      <GridColumnProperties width="85" />
+    </Column>
+    <Column>
+      <Title>TEST_DESCRIPTION</Title>
+      <ColumnName>TEST_DESCRIPTION</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>500</Length>
+      <Format />
+      <Index>0</Index>
+      <DefaultValue>1</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Detail Description of test</Comment>
+      <GridColumnProperties width="669" />
+    </Column>
+    <Column>
+      <Title>ACTIVE</Title>
+      <ColumnName>ACTIVE</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Boolean</Type>
+      <Length>1</Length>
+      <Format />
+      <Index>1</Index>
+      <DefaultValue>False</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Active Scenario</Comment>
+      <GridColumnProperties width="48" />
+    </Column>
+  </SchemaColumns>
+  <IsImportFromSQL>false</IsImportFromSQL>
+  <IsDynamicData>false</IsDynamicData>
+  <ColumnMapping />
+  <TranslationData>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="trnMainAutoIIDFTest" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="trnMainAutoIIDFTest">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TEST_ID" type="xs:long" />
+                  <xs:element name="TEST_DESCRIPTION">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ACTIVE" type="xs:boolean" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+      <DocumentElement>
+        <trnMainAutoIIDFTest diffgr:id="trnMainAutoIIDFTest1" msdata:rowOrder="0">
+          <TEST_ID>9</TEST_ID>
+          <TEST_DESCRIPTION>Update a table link field (two fields) to it’s parent – Link fields are part of the table PK (updated field exist on another parent)</TEST_DESCRIPTION>
+          <ACTIVE>true</ACTIVE>
+        </trnMainAutoIIDFTest>
+      </DocumentElement>
+    </diffgr:diffgram>
+  </TranslationData>
+  <DataRowsHeight>20</DataRowsHeight>
+</Translation>

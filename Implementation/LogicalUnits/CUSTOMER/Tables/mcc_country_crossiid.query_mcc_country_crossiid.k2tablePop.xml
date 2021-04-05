@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_mcc_country_crossiid</ID>
+  <PopulationObjectName>query_mcc_country_crossiid</PopulationObjectName>
+  <TableName>mcc_country_crossiid</TableName>
+  <RootItemID>query_query_mcc_country_crossiid</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>mcc_country_crossiid</SourceTableName>
+    <SourceTableKey>mcc</SourceTableKey>
+    <StoreData>false</StoreData>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="mcc" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="country" id="queryCol_1" dataType="Text" index="1" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_mcc_country_crossiid" name="query_mcc_country_crossiid" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="mcc" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="country" dataType="Text" index="1" />
+      </OutputsList>
+      <SQL><![CDATA[Select *
+From public.mcc_country]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="8" fromNodeOrder="0" fromItemID="query_query_mcc_country_crossiid" fromColID="queryCol_0" toItemID="mcc_country_crossiid" toColID="tblCol_29a6f35af3dc47b29329c21f2c57f8cd" />
+    <Link partId="9" fromNodeOrder="0" fromItemID="query_query_mcc_country_crossiid" fromColID="queryCol_1" toItemID="mcc_country_crossiid" toColID="tblCol_8149bd8ef47b4db8b626ce872fcd7b00" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="mcc_country_crossiid.query_mcc_country_crossiid.k2tablePop.xml" lastPartID="15">
+      <TableNode partID="0" name="mcc_country_crossiid" pos="383 5.890629" width="253" />
+      <DBQueryNode partID="5" name="CRM_DB" pos="10 0.9270859" size="253 84.14583" isRoot="true">
+        <DBQuery>{"Name":"query_mcc_country_crossiid","ID":"query_query_mcc_country_crossiid","ConnName":"CRM_DB","SQL":"Select *\r\nFrom public.mcc_country","ColumnsList":[{"ID":"queryCol_0","Name":"mcc","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"country","DataType":"Text","Index":1,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="8" from="0" to="1" pointsArr="263 36.9635429 273 36.9635429 313 37 333 37 373 36.9270859 383 36.9270859" fromNodePartID="5" fromNodeColumnName="mcc" toNodePartID="0" toNodeColumnName="mcc" />
+      <Link partID="9" from="2" to="3" pointsArr="263 49.03646 273 49.03646 313 49 333 49 373 49 383 49" fromNodePartID="5" fromNodeColumnName="country" toNodePartID="0" toNodeColumnName="country" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

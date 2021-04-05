@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<lu_list>
+<lu keyspace="CUSTOMER" name="CUSTOMER" sourceAvailable="false">
+	<table dbInterface="CRM_DB" key="customer_id" keyspace="public" luid="ssn" name="customer" targetTableName="CUSTOMER">
+		<table dbInterface="CRM_DB" isCrossIID="true"  key="activity_id" keyspace="public" name="activity" parentKey="customer_id" targetTableName="ACTIVITY">
+			<table dbInterface="CRM_DB" key="case_id" keyspace="public" name="cases" parentKey="activity_id" targetTableName="CASES">
+				<table dbInterface="CRM_DB" key="case_id,note_id" keyspace="public" name="case_note" parentKey="case_id" targetTableName="CASE_NOTE"/>
+			</table>
+			<table dbInterface="CRM_DB" isCrossIID="true" key="case_id" keyspace="public" name="cases_crossiid" parentKey="activity_id" targetTableName="CASES_CROSSIID">
+				<table dbInterface="CRM_DB" key="case_id,note_id" keyspace="public" name="case_note_crossiid" parentKey="case_id" targetTableName="CASE_NOTE_CROSSIID"/>
+			</table>
+		</table>
+		<table dbInterface="CRM_DB" key="customer_id,address_id" keyspace="public" name="address" parentKey="customer_id" targetTableName="ADDRESS"/>
+		<table dbInterface="CRM_DB" isCrossIID="true" key="customer_id,contact_id" keyspace="public" name="contact_link" parentKey="customer_id" targetTableName="CONTACT_LINK">
+			<table dbInterface="CRM_DB" key="contact_id" keyspace="public" name="contact" parentKey="contact_id" targetTableName="CONTACT"/>
+		</table>
+		<table dbInterface="CRM_DB" key="contract_id" keyspace="public" name="contract" parentKey="customer_id" targetTableName="CONTRACT">
+			<table dbInterface="CRM_DB" key="subscriber_id" keyspace="public" name="subscriber" parentKey="subscriber_id=contract_id" targetTableName="SUBSCRIBER">
+				<table dbInterface="CRM_DB" key="subscriber_id,balance_id" keyspace="public" name="balance" parentKey="subscriber_id" targetTableName="BALANCE"/>
+				<table dbInterface="CRM_DB" key="invoice_id" keyspace="public" name="invoice" parentKey="subscriber_id" targetTableName="INVOICE">
+					<table dbInterface="CRM_DB" key="payment_id" keyspace="public" name="payment"  parentKey="invoice_id" targetTableName="PAYMENT"/>
+				</table>
+				<table dbInterface="CRM_DB" key="imsi" keyspace="public" name="mcc_mnc" parentKey="imsi" targetTableName="MCC_MNC">
+					<table dbInterface="CRM_DB" key="mcc" keyspace="public" name="mcc_country"  parentKey="mcc" targetTableName="MCC_COUNTRY" stored="false"/>
+					<table dbInterface="CRM_DB" key="mcc,mnc" keyspace="public" name="mcc_mnc_quotes"  parentKey="mcc,mnc" targetTableName="MCC_MNC_QUOTES" stored="false"/>
+					<table dbInterface="CRM_DB" key="mnc" keyspace="public" name="mnc_words"  parentKey="mnc" targetTableName="MNC_WORDS" stored="false"/>
+					<table dbInterface="CRM_DB" isCrossIID="true" key="mcc,mnc" keyspace="public" name="mcc_mnc_quotes_crossiid"  parentKey="mcc,mnc" targetTableName="MCC_MNC_QUOTES_CROSSIID">
+						<table dbInterface="CRM_DB" key="mcc" keyspace="public" name="mcc_country_crossiid"  parentKey="mcc" targetTableName="MCC_COUNTRY_CROSSIID" stored="false"/>
+					</table>
+				</table>
+				<table dbInterface="CRM_DB" key="sim" keyspace="public" name="sim_name" parentKey="sim" targetTableName="SIM_NAME"/>	
+			</table>
+		</table>
+	</table>
+</lu>
+</lu_list>

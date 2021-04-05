@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>balance</Name>
+  <ID>tbl_balance</ID>
+  <Columns>
+    <Column name="subscriber_id" id="tblCol_8f700884aa86450cb22031cab5f14947" index="0" datatype="Integer" mandatory="true" />
+    <Column name="balance_id" id="tblCol_cd3d4261a7764d978cbfae6e2762d0b5" index="1" datatype="Integer" mandatory="true" />
+    <Column name="balance_ref_id" id="tblCol_067b094431694de297d46749ee627ca1" index="2" datatype="Integer" />
+    <Column name="available_amount" id="tblCol_297c3bf7e6e14eff9f5ded2002aa19c4" index="3" datatype="Integer" />
+    <Column name="reset_amount" id="tblCol_e21446be72214ffbb193f502ba5a1f9e" index="4" datatype="Integer" />
+    <Column name="reset_date" id="tblCol_6f6d68e56e814d559f22f697d8d3fc6b" index="5" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_8f700884aa86450cb22031cab5f14947,tblCol_cd3d4261a7764d978cbfae6e2762d0b5" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="00:00:05">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

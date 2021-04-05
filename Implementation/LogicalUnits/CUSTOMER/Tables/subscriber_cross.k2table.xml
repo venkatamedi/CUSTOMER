@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>subscriber_cross</Name>
+  <ID>subscriber_cross</ID>
+  <Version>6.4.0.43</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="subscriber_id" id="tblCol_162acb9cd3ca467fada331041bc52cfb" index="0" datatype="Integer" mandatory="true" serializationName="subscriber_id" />
+    <Column name="msisdn" id="tblCol_936addfc50654dc09561a5f29aa230ad" index="1" datatype="Text" serializationName="msisdn" />
+    <Column name="imsi" id="tblCol_6359e620d22d4a1ab2eaf5d6d7783419" index="2" datatype="Text" serializationName="imsi" />
+    <Column name="sim" id="tblCol_58690a306ead4a868d8611cfae4ab65c" index="3" datatype="Text" serializationName="sim" />
+    <Column name="first_name" id="tblCol_5d74a41b448c413eaa28e903b3750277" index="4" datatype="Text" serializationName="first_name" />
+    <Column name="last_name" id="tblCol_4bfd7bee1bd74d62986b5372cfc16be2" index="5" datatype="Text" serializationName="last_name" />
+    <Column name="subscriber_type" id="tblCol_5c2e799a34de41c1a2957ccb0ff3e119" index="6" datatype="Text" serializationName="subscriber_type" />
+    <Column name="vip_status" id="tblCol_97188351b0c84df6af8a1bc2c2ecb107" index="7" datatype="Text" serializationName="vip_status" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_162acb9cd3ca467fada331041bc52cfb" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

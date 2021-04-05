@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>payment</Name>
+  <ID>tbl_payment</ID>
+  <Columns>
+    <Column name="invoice_id" id="tblCol_2aacb28e723d493ba087f47160998dbb" index="0" datatype="Integer" />
+    <Column name="payment_id" id="tblCol_e2a475d9624f476f9c5fdb15fd215189" index="1" datatype="Integer" mandatory="true" />
+    <Column name="issued_date" id="tblCol_fe0ee32cce4b4fb98a95789834e470d9" index="2" datatype="Text" />
+    <Column name="status" id="tblCol_0cedd7d919544e27840092fb348cc4eb" index="3" datatype="Text" />
+    <Column name="amount" id="tblCol_f4e6ed406b9147edbd5884da1f320444" index="4" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_e2a475d9624f476f9c5fdb15fd215189" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

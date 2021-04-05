@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_public_case_note_crossiid</ID>
+  <PopulationObjectName>query_public_case_note_crossiid</PopulationObjectName>
+  <TableName>case_note_crossiid</TableName>
+  <RootItemID>query_query_public_case_note</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>case_note_crossiid</SourceTableName>
+    <SourceTableKey>case_id,note_id</SourceTableKey>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="case_id" id="queryCol_0" dataType="Integer" index="0" />
+    <Arg name="note_id" id="queryCol_1" dataType="Integer" index="1" />
+    <Arg name="note_date" id="queryCol_2" dataType="Text" index="2" />
+    <Arg name="note_text" id="queryCol_3" dataType="Text" index="3" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_case_note" name="query_public_case_note" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="case_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="note_id" dataType="Integer" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="note_date" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="note_text" dataType="Text" index="3" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM public.case_note]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="12" fromNodeOrder="0" fromItemID="query_query_public_case_note" fromColID="queryCol_0" toItemID="tbl_case_note_crossiid" toColID="tblCol_5e48c991253a4793971449989ebb5d6a" />
+    <Link partId="13" fromNodeOrder="0" fromItemID="query_query_public_case_note" fromColID="queryCol_1" toItemID="tbl_case_note_crossiid" toColID="tblCol_e03c16a0c49542968aaf194091afaac4" />
+    <Link partId="14" fromNodeOrder="0" fromItemID="query_query_public_case_note" fromColID="queryCol_2" toItemID="tbl_case_note_crossiid" toColID="tblCol_d265b581732641969f1bf9306659311d" />
+    <Link partId="15" fromNodeOrder="0" fromItemID="query_query_public_case_note" fromColID="queryCol_3" toItemID="tbl_case_note_crossiid" toColID="tblCol_ed19de4a9ba04a0f8eb5bcba290b9d3e" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="case_note_crossiid.query_public_case_note_crossiid.k2tablePop.xml" lastPartID="15">
+      <TableNode partID="0" name="case_note_crossiid" pos="404 30" width="253" />
+      <DBQueryNode partID="7" name="CRM_DB" pos="56 45.5091248" size="253 108.291664" isRoot="true">
+        <DBQuery>{"Name":"query_public_case_note","ID":"query_query_public_case_note","ConnName":"CRM_DB","SQL":"SELECT * FROM public.case_note","ColumnsList":[{"ID":"queryCol_0","Name":"case_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"note_id","DataType":"Integer","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"note_date","DataType":"Text","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"note_text","DataType":"Text","Index":3,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="12" from="0" to="1" pointsArr="309 81.54557 319 81.54557 394 61.0364571 404 61.0364571" fromNodePartID="7" fromNodeColumnName="case_id" toNodePartID="0" toNodeColumnName="case_id" />
+      <Link partID="13" from="2" to="3" pointsArr="309 93.61849 319 93.61849 394 73.109375 404 73.109375" fromNodePartID="7" fromNodeColumnName="note_id" toNodePartID="0" toNodeColumnName="note_id" />
+      <Link partID="14" from="4" to="5" pointsArr="309 105.6914 319 105.6914 394 85.18229 404 85.18229" fromNodePartID="7" fromNodeColumnName="note_date" toNodePartID="0" toNodeColumnName="note_date" />
+      <Link partID="15" from="6" to="7" pointsArr="309 117.76432 319 117.76432 394 97.2552 404 97.2552" fromNodePartID="7" fromNodeColumnName="note_text" toNodePartID="0" toNodeColumnName="note_text" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

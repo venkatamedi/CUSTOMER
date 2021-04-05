@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_contact_store_false</ID>
+  <PopulationObjectName>query_contact_store_false</PopulationObjectName>
+  <TableName>contact_store_false</TableName>
+  <RootItemID>query_query_public_contact_store_false</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>contact_store_false</SourceTableName>
+    <SourceTableKey>contact_id</SourceTableKey>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="contact_id" id="queryCol_0" dataType="Integer" index="0" />
+    <Arg name="first_name" id="queryCol_1" dataType="Text" index="1" />
+    <Arg name="last_name" id="queryCol_2" dataType="Text" index="2" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_contact_store_false" name="query_public_contact_store_false" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="contact_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="first_name" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="last_name" dataType="Text" index="2" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM public.contact_store_false]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="33" fromNodeOrder="0" fromItemID="query_query_public_contact_store_false" fromColID="queryCol_0" toItemID="contact_store_false" toColID="tblCol_2314e35fdda44cf5ac5f8cfc4582cd01" />
+    <Link partId="34" fromNodeOrder="0" fromItemID="query_query_public_contact_store_false" fromColID="queryCol_1" toItemID="contact_store_false" toColID="tblCol_7dc8688ac86146039fce466b858cb399" />
+    <Link partId="35" fromNodeOrder="0" fromItemID="query_query_public_contact_store_false" fromColID="queryCol_2" toItemID="contact_store_false" toColID="tblCol_4f33409e8ff6432689abf5818c80e27c" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="contact_store_false.query_contact_store_false.k2tablePop.xml" lastPartID="43">
+      <TableNode partID="0" name="contact_store_false" pos="383 5.854168" width="253" />
+      <DBQueryNode partID="29" name="CRM_DB" pos="35 12.7994814" size="253 96.21875" isRoot="true">
+        <DBQuery>{"Name":"query_public_contact_store_false","ID":"query_query_public_contact_store_false","ConnName":"CRM_DB","SQL":"SELECT * FROM public.contact_store_false","ColumnsList":[{"ID":"queryCol_0","Name":"contact_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"first_name","DataType":"Text","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"last_name","DataType":"Text","Index":2,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="33" from="0" to="1" pointsArr="288 48.83594 298 48.83594 373 36.89063 383 36.89063" fromNodePartID="29" fromNodeColumnName="contact_id" toNodePartID="0" toNodeColumnName="contact_id" />
+      <Link partID="34" from="2" to="3" pointsArr="288 60.9088554 298 60.9088554 373 48.9635429 383 48.9635429" fromNodePartID="29" fromNodeColumnName="first_name" toNodePartID="0" toNodeColumnName="first_name" />
+      <Link partID="35" from="4" to="5" pointsArr="288 72.98177 298 72.98177 373 61.0364571 383 61.0364571" fromNodePartID="29" fromNodeColumnName="last_name" toNodePartID="0" toNodeColumnName="last_name" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

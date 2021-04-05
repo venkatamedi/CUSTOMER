@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>activity</Name>
+  <ID>tbl_activity</ID>
+  <Columns>
+    <Column name="customer_id" id="tblCol_1dd69c8157014788a5364c62e5e5ae73" index="0" datatype="Integer" mandatory="true" />
+    <Column name="activity_id" id="tblCol_88470802febb4efb8aacc7f08702b99b" index="1" datatype="Integer" mandatory="true" />
+    <Column name="activity_date" id="tblCol_660c634318cf44f483732b9397523f47" index="2" datatype="Text" />
+    <Column name="activity_note" id="tblCol_f19fd9263cf346998673607b1c1bb11d" index="3" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_88470802febb4efb8aacc7f08702b99b" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

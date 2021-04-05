@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_contact_customer_nostore</ID>
+  <PopulationObjectName>query_contact_customer_nostore</PopulationObjectName>
+  <TableName>contact_customer_nostore</TableName>
+  <RootItemID>query_query_contact_customer_nostore</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>contact_customer_nostore</SourceTableName>
+    <SourceTableKey>customer_id,contact_id</SourceTableKey>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="customer_id" id="queryCol_0" dataType="Integer" index="0" />
+    <Arg name="contact_id" id="queryCol_1" dataType="Integer" index="1" />
+    <Arg name="customer_name" id="queryCol_2" dataType="Text" index="2" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_contact_customer_nostore" name="query_contact_customer_nostore" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="customer_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="contact_id" dataType="Integer" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="customer_name" dataType="Text" index="2" />
+      </OutputsList>
+      <SQL><![CDATA[Select *
+From public.contact_customer_nostore]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="10" fromNodeOrder="0" fromItemID="query_query_contact_customer_nostore" fromColID="queryCol_0" toItemID="contact_customer_nostore" toColID="tblCol_97c4c92ca4ba489791fa097449049f25" />
+    <Link partId="11" fromNodeOrder="0" fromItemID="query_query_contact_customer_nostore" fromColID="queryCol_1" toItemID="contact_customer_nostore" toColID="tblCol_61cdb9cf5dde42fa928e3f89d7ca9249" />
+    <Link partId="12" fromNodeOrder="0" fromItemID="query_query_contact_customer_nostore" fromColID="queryCol_2" toItemID="contact_customer_nostore" toColID="tblCol_008bb4a031f14c09b9dc7fd67065f1ec" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="contact_customer_nostore.query_contact_customer_nostore.k2tablePop.xml" lastPartID="20">
+      <TableNode partID="0" name="contact_customer_nostore" pos="383 5.854168" width="253" />
+      <DBQueryNode partID="6" name="CRM_DB" pos="10 0.890625" size="253 96.21875" isRoot="true">
+        <DBQuery>{"Name":"query_contact_customer_nostore","ID":"query_query_contact_customer_nostore","ConnName":"CRM_DB","SQL":"Select *\r\nFrom public.contact_customer_nostore","ColumnsList":[{"ID":"queryCol_0","Name":"customer_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"contact_id","DataType":"Integer","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"customer_name","DataType":"Text","Index":2,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="10" from="0" to="1" pointsArr="263 36.9270859 273 36.9270859 313 37 333 37 373 36.89063 383 36.89063" fromNodePartID="6" fromNodeColumnName="customer_id" toNodePartID="0" toNodeColumnName="customer_id" />
+      <Link partID="11" from="2" to="3" pointsArr="263 49 273 49 313 49 333 49 373 48.9635429 383 48.9635429" fromNodePartID="6" fromNodeColumnName="contact_id" toNodePartID="0" toNodeColumnName="contact_id" />
+      <Link partID="12" from="4" to="5" pointsArr="263 61.0729141 273 61.0729141 313 61 333 61 373 61.0364571 383 61.0364571" fromNodePartID="6" fromNodeColumnName="customer_name" toNodePartID="0" toNodeColumnName="customer_name" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>contact_link</Name>
+  <ID>tbl_contact_link</ID>
+  <Columns>
+    <Column name="customer_id" id="tblCol_4c6a893fd7e84fac8cad6a52e04d9262" index="0" datatype="Integer" mandatory="true" />
+    <Column name="contact_id" id="tblCol_8a7026f9ae34465db165e8c3bd47f7be" index="1" datatype="Integer" mandatory="true" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_4c6a893fd7e84fac8cad6a52e04d9262,tblCol_8a7026f9ae34465db165e8c3bd47f7be" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>mcc_mnc_crossiid</Name>
+  <ID>mcc_mnc_crossiid</ID>
+  <Version>6.2.3.2</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="imsi" id="tblCol_86145a73c46d4b3db57423b181133289" index="0" datatype="Text" mandatory="true" serializationName="imsi" />
+    <Column name="mcc" id="tblCol_aa91ffac79e645b7969f9937db477c5d" index="1" datatype="Text" mandatory="true" serializationName="mcc" />
+    <Column name="mnc" id="tblCol_8b16974f2354457280a1be2bd0104372" index="2" datatype="Text" mandatory="true" serializationName="mnc" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

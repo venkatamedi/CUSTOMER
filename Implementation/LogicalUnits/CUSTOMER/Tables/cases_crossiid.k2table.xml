@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cases_crossiid</Name>
+  <ID>tbl_cases_crossiid</ID>
+  <Version>6.2.3.2</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="activity_id" id="tblCol_8313174ff41d41b4ae812cb552363e94" index="0" datatype="Integer" mandatory="true" serializationName="activity_id" />
+    <Column name="case_id" id="tblCol_a2c912bd9bd340b29c6ab25ed6537637" index="1" datatype="Integer" mandatory="true" serializationName="case_id" />
+    <Column name="case_date" id="tblCol_e2e34547bfda474b9b4355d4881908a4" index="2" datatype="Text" mandatory="true" serializationName="case_date" />
+    <Column name="case_type" id="tblCol_760071d932614788b4ed734e823841a2" index="3" datatype="Text" mandatory="true" serializationName="case_type" />
+    <Column name="status" id="tblCol_1db3b6c52b524ae5bf5b42ba76b5777e" index="4" datatype="Text" mandatory="true" serializationName="status" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_a2c912bd9bd340b29c6ab25ed6537637" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

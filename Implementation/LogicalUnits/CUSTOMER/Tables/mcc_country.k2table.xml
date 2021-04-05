@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>mcc_country</Name>
+  <ID>tbl_mcc_country</ID>
+  <Columns>
+    <Column name="mcc" id="tblCol_66620cac89fa4abcaa28894d8b45dc42" index="0" datatype="Text" mandatory="true" />
+    <Column name="country" id="tblCol_2a3d9c30d1c345608eaa6025d8ecf374" index="1" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_66620cac89fa4abcaa28894d8b45dc42" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

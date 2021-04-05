@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>contact_subscriber_nostore</Name>
+  <ID>contact_subscriber_nostore</ID>
+  <Version>6.2.3.2</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="subscriber_id" id="tblCol_ade1f3cfaa79435892ede2e19db00d4c" index="0" datatype="Integer" mandatory="true" serializationName="subscriber_id" />
+    <Column name="contact_id" id="tblCol_1351223dd7764846a46535b109bf165b" index="1" datatype="Integer" mandatory="true" serializationName="contact_id" />
+    <Column name="subscriber_name" id="tblCol_21ccd62dfe1b44598f2df461f0b3bb15" index="2" datatype="Text" serializationName="subscriber_name" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_ade1f3cfaa79435892ede2e19db00d4c,tblCol_1351223dd7764846a46535b109bf165b" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

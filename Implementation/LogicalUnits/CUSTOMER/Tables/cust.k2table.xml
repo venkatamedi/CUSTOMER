@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cust</Name>
+  <ID>tbl_cust</ID>
+  <Columns>
+    <Column name="id" id="tblCol_9d194752b5194d86bf58bb913af697b7" index="0" datatype="Integer" mandatory="true" />
+    <Column name="name" id="tblCol_4bbe55540fc641daaeb62fca0ee98084" index="1" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_9d194752b5194d86bf58bb913af697b7" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

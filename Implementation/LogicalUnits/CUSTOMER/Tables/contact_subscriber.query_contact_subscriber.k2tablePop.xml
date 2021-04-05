@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_contact_subscriber</ID>
+  <PopulationObjectName>query_contact_subscriber</PopulationObjectName>
+  <TableName>contact_subscriber</TableName>
+  <RootItemID>query_query_contact_subscriber</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>contact_subscriber</SourceTableName>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="subscriber_id" id="queryCol_0" dataType="Integer" index="0" />
+    <Arg name="contact_id" id="queryCol_1" dataType="Integer" index="1" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_contact_subscriber" name="query_contact_subscriber" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="subscriber_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="contact_id" dataType="Integer" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="subscriber_name" dataType="Text" index="2" />
+      </OutputsList>
+      <SQL><![CDATA[Select *
+From public.contact_subscriber]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="8" fromNodeOrder="0" fromItemID="query_query_contact_subscriber" fromColID="queryCol_0" toItemID="contact_subscriber" toColID="tblCol_b9f1387a8fcc44abbe0701fbfb84d486" />
+    <Link partId="9" fromNodeOrder="0" fromItemID="query_query_contact_subscriber" fromColID="queryCol_1" toItemID="contact_subscriber" toColID="tblCol_86eae14212d04b76855ea2ca6621ab7d" />
+    <Link partId="24" fromNodeOrder="0" fromItemID="query_query_contact_subscriber" fromColID="queryCol_2" toItemID="contact_subscriber" toColID="tblCol_4eb45072be814ad98f18347d8c727ce5" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="contact_subscriber.query_contact_subscriber.k2tablePop.xml" lastPartID="24">
+      <TableNode partID="0" name="contact_subscriber" pos="460 4.890629" width="253" />
+      <DBQueryNode partID="5" name="CRM_DB" pos="10 0.9270859" size="344.8333 96.21875" isRoot="true">
+        <DBQuery>{"Name":"query_contact_subscriber","ID":"query_query_contact_subscriber","ConnName":"CRM_DB","SQL":"Select *\r\nFrom public.contact_subscriber","ColumnsList":[{"ID":"queryCol_0","Name":"subscriber_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"contact_id","DataType":"Integer","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"subscriber_name","DataType":"Text","Index":2,"IsInputArgument":false}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="8" from="0" to="1" pointsArr="354.8333 36.9635468 364.8333 36.9635468 450 35.9270859 460 35.9270859" fromNodePartID="5" fromNodeColumnName="subscriber_id" toNodePartID="0" toNodeColumnName="subscriber_id" />
+      <Link partID="9" from="2" to="3" pointsArr="354.8333 49.03646 364.8333 49.03646 450 48 460 48" fromNodePartID="5" fromNodeColumnName="contact_id" toNodePartID="0" toNodeColumnName="contact_id" />
+      <Link partID="24" from="4" to="5" pointsArr="354.8333 61.109375 364.8333 61.109375 450 60.0729179 460 60.0729179" fromNodePartID="5" fromNodeColumnName="subscriber_name" toNodePartID="0" toNodeColumnName="subscriber_name" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>mcc_mnc_quotes</Name>
+  <ID>tbl_mcc_mnc_quotes</ID>
+  <Columns>
+    <Column name="mcc" id="tblCol_287876a5719947c1bdc57b2db41f8e43" index="0" datatype="Text" mandatory="true" />
+    <Column name="mnc" id="tblCol_a33d01aaecad4976b5d34da0491166c6" index="1" datatype="Text" mandatory="true" />
+    <Column name="quote" id="tblCol_0e495b119ef346d8a3141ba2d28954a0" index="2" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_287876a5719947c1bdc57b2db41f8e43,tblCol_a33d01aaecad4976b5d34da0491166c6" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

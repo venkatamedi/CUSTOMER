@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>sim_name_cross</Name>
+  <ID>sim_name_cross</ID>
+  <Version>6.4.0.43</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="sim" id="tblCol_6098f98c41c646f3bca2c54cdbd6c66b" index="0" datatype="Text" mandatory="true" serializationName="sim" />
+    <Column name="first_name" id="tblCol_ce23f1a6d7104c59a1c48e6f92568ac8" index="1" datatype="Text" serializationName="first_name" />
+    <Column name="last_name" id="tblCol_ff6d7b048ecd48848853d7debfd8e46a" index="2" datatype="Text" serializationName="last_name" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_6098f98c41c646f3bca2c54cdbd6c66b" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

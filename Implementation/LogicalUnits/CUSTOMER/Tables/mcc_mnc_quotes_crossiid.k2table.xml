@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>mcc_mnc_quotes_crossiid</Name>
+  <ID>mcc_mnc_quotes_crossiid</ID>
+  <Version>6.2.3.2</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="mcc" id="tblCol_cead82a117824b6bad79497f7b77be7e" index="0" datatype="Text" mandatory="true" serializationName="mcc" />
+    <Column name="mnc" id="tblCol_c4bc48751dc446a6827b4e6fca160f74" index="1" datatype="Text" mandatory="true" serializationName="mnc" />
+    <Column name="quote" id="tblCol_c034228b46654f1a9e2667f15eb56471" index="2" datatype="Text" mandatory="true" serializationName="quote" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_cead82a117824b6bad79497f7b77be7e,tblCol_c4bc48751dc446a6827b4e6fca160f74" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

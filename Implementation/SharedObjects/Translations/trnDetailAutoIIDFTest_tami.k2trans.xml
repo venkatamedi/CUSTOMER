@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Translation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>trnDetailAutoIIDFTest_tami</Name>
+  <InputNotFoundAction>Use_Default</InputNotFoundAction>
+  <SchemaColumns>
+    <Column>
+      <Title>TEST_ID</Title>
+      <ColumnName>TEST_ID</ColumnName>
+      <Direction>Input</Direction>
+      <Type>Integer</Type>
+      <Length>3</Length>
+      <Format />
+      <Index>0</Index>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Column with the Actual test number(i.e.1,2..) MANDATORY</Comment>
+      <GridColumnProperties width="81" />
+    </Column>
+    <Column>
+      <Title>TEST_STEP_ID</Title>
+      <ColumnName>TEST_STEP_ID</ColumnName>
+      <Direction>Input</Direction>
+      <Type>Integer</Type>
+      <Length>3</Length>
+      <Format />
+      <Index>1</Index>
+      <DefaultValue />
+      <AllowNULL>false</AllowNULL>
+      <Comment>Column having the Test step ID for the current test(Sequenced in number, Can't skip the sequence for one particular test Id) MANDATORY</Comment>
+      <GridColumnProperties width="101" />
+    </Column>
+    <Column>
+      <Title>TEST_STEP_TYPE</Title>
+      <ColumnName>TEST_STEP_TYPE</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>50</Length>
+      <Format />
+      <Index>0</Index>
+      <DefaultValue>0</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Should be the test purpose. eg: GET|SOURCE_QUERY|PRODUCER|TARGET_QUERY MANDATORY</Comment>
+      <GridColumnProperties width="120" />
+    </Column>
+    <Column>
+      <Title>TEST_COMMAND</Title>
+      <ColumnName>TEST_COMMAND</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>500</Length>
+      <Format />
+      <Index>1</Index>
+      <DefaultValue>0</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>As Required for executing the preceding step id for test case, IF GET - LUNAME(MANDATORY);INSTANCE_ID(MANDATORY) || IF PRODUCER - sql Statement(MANDATORY);LUNAME(MANDATORY) || IF SOURCE_QUERY - Source Interface(MANDATORY);Source sql Statement(MANDATORY); Produce ind(MANDATORY)(True if need to produce trx to kafka, else false);LUNAME - If Produce ind is true and LU NAME was not provided then LU NAME from last get is used, If Produce ind is true and no previous Get before this step then LU NAME is mandatory. If Produce ind is true and LU NAME input provided it will always be used. || IF TARGET QUERY - Interface(MANDATORY);Select sql(MANDATORY)</Comment>
+      <GridColumnProperties width="565" />
+    </Column>
+    <Column>
+      <Title>EXPECTED_RESULT</Title>
+      <ColumnName>EXPECTED_RESULT</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>2000</Length>
+      <Format />
+      <Index>2</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <Comment>EXPECTED_JSON output based on the last step from TEST_COMMAND(MANDATORY - If user wants to validate TARGET QUERY).</Comment>
+      <GridColumnProperties width="132" />
+    </Column>
+  </SchemaColumns>
+  <IsImportFromSQL>false</IsImportFromSQL>
+  <IsDynamicData>false</IsDynamicData>
+  <ColumnMapping />
+  <TranslationData>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="trnDetailAutoIIDFTest_tami" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="trnDetailAutoIIDFTest_tami">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TEST_ID" type="xs:long" />
+                  <xs:element name="TEST_STEP_ID" type="xs:long" />
+                  <xs:element name="TEST_STEP_TYPE">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TEST_COMMAND">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EXPECTED_RESULT" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2000" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+      <DocumentElement>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami1" msdata:rowOrder="0">
+          <TEST_ID>1</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;15</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami2" msdata:rowOrder="1">
+          <TEST_ID>1</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME from CUSTOMER WHERE CUSTOMER_ID = 676451</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOM_ID":676451,"LAST_NAME":"TEST","FIRST_NAME":"AUTO","SSN":"15"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami3" msdata:rowOrder="2">
+          <TEST_ID>1</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;SELECT DELTA FROM  k2staging.k_cus_delta where iid = '15'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"insert","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null},"fromOrphanJob":false,"tableName":"PUBLIC_CUSTOMER"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami4" msdata:rowOrder="3">
+          <TEST_ID>2</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;4292321946</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami5" msdata:rowOrder="4">
+          <TEST_ID>2</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;UPDATE public.ADDRESS SET ADDRESS_ID = 7648,CUSTOMER_ID=146 WHERE ADDRESS_ID = 146 and CUSTOMER_ID = 146;true</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami6" msdata:rowOrder="5">
+          <TEST_ID>2</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;4292321946</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami7" msdata:rowOrder="6">
+          <TEST_ID>2</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM CUSTOMER WHERE CUSTOMER_ID = 146</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOMER_ID":146,"LAST_NAME":"stevens","FIRST_NAME":"melany","SSN":"4292321946"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami8" msdata:rowOrder="7">
+          <TEST_ID>2</TEST_ID>
+          <TEST_STEP_ID>6</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM ADDRESS WHERE ADDRESS_ID = 7648</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOMER_ID":146,"ADDRESS_ID":7648,"CITY":"big lake","ZIP":"99652"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami9" msdata:rowOrder="8">
+          <TEST_ID>2</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;SELECT DELTA FROM  k2staging.k_cus_delta where iid = '4292321946'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","isCrossIID":false},"tableName":"PUBLIC_ADDRESS"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami10" msdata:rowOrder="9">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;9953339187</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami11" msdata:rowOrder="10">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM ACTIVITY WHERE CUSTOMER_ID = 7645 and ACTIVITY_ID = 38418</TEST_COMMAND>
+          <EXPECTED_RESULT>[]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami12" msdata:rowOrder="11">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;1907064446</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami13" msdata:rowOrder="12">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM ACTIVITY WHERE CUSTOMER_ID = 7652 and ACTIVITY_ID = 38418</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOMER_ID":7652,"ACTIVITY_ID":38418}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami14" msdata:rowOrder="13">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;UPDATE public.ACTIVITY SET CUSTOMER_ID = 7645, ACTIVITY_ID = 38418 WHERE CUSTOMER_ID = 7652 and ACTIVITY_ID = 38418;true</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami15" msdata:rowOrder="14">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>8</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;1907064446</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami16" msdata:rowOrder="15">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>6</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;SELECT DELTA FROM  k2staging.k_cus_delta where iid = '1907064446'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":true,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":true,"isCrossIID":false},"tableName":"PUBLIC_ACTIVITY"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami17" msdata:rowOrder="16">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>9</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM ACTIVITY WHERE CUSTOMER_ID = 7652 and ACTIVITY_ID = 38418</TEST_COMMAND>
+          <EXPECTED_RESULT>[]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami18" msdata:rowOrder="17">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>11</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;9953339187</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami19" msdata:rowOrder="18">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>10</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;SELECT DELTA FROM  k2staging.k_cus_delta where iid = '9953339187'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"insert","logicalPidChanged":true,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":true,"isCrossIID":false,"orgOperation":"update"},"tableName":"PUBLIC_ACTIVITY"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami20" msdata:rowOrder="19">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>12</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM ACTIVITY WHERE CUSTOMER_ID = 7645 and ACTIVITY_ID = 38418</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOMER_ID":7645,"ACTIVITY_ID":38418}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami21" msdata:rowOrder="20">
+          <TEST_ID>3</TEST_ID>
+          <TEST_STEP_ID>7</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;SELECT ID FROM k2staging.k_cus_public_activity_c where parent contains '38418' allow filtering</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"ACTIVITY_ID_38418"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami22" msdata:rowOrder="21">
+          <TEST_ID>1</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>PRODUCER</TEST_STEP_TYPE>
+          <TEST_COMMAND>INSERT INTO PUBLIC.CUSTOMER (CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME) VALUES (676451, '15', 'AUTO', 'TEST');CUSTOMER</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami23" msdata:rowOrder="22">
+          <TEST_ID>4</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOM;15</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami24" msdata:rowOrder="23">
+          <TEST_ID>4</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;INSERT INTO public.CUSTOMER (CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME) VALUES (5241524, '12', 'AUTO', 'TEST');false</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami25" msdata:rowOrder="24">
+          <TEST_ID>5</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>PRODUCER</TEST_STEP_TYPE>
+          <TEST_COMMAND>INSERT INTO CUSTOMER(CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME) VALUES (61326451, '15', 'AUTO', 'TEST');CUSTOMER</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami26" msdata:rowOrder="25">
+          <TEST_ID>5</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;15</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami27" msdata:rowOrder="26">
+          <TEST_ID>6</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;INSERT INTO PUBLIC.CUSTOMER(CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME) VALUES (61326451, '15', 'AUTO', 'TEST');true</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami28" msdata:rowOrder="27">
+          <TEST_ID>7</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>INSERT INTO PUBLIC.CUSTOMER(CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME) VALUES (61326451, '15', 'AUTO', 'TEST');CUSTOMER;true;CUSTOM</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami29" msdata:rowOrder="28">
+          <TEST_ID>8</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;INSERT INTO public.CUSTOMER (CUSTOMER_ID,SSN,FIRST_NAME,LAST_NAME) VALUES (676451, '15', 'AUTO', 'TEST');false</TEST_COMMAND>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami30" msdata:rowOrder="29">
+          <TEST_ID>17</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;select sim from subscriber where subscriber_id=4</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"SIM":"9009227816906040"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami31" msdata:rowOrder="30">
+          <TEST_ID>17</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;5153527856</TEST_COMMAND>
+          <EXPECTED_RESULT></EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami32" msdata:rowOrder="31">
+          <TEST_ID>17</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.sim_name set first_name='tylor', last_name='swift' where sim='9009227816906040' and first_name='emeline' and last_name='griffin';true</TEST_COMMAND>
+          <EXPECTED_RESULT></EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami33" msdata:rowOrder="32">
+          <TEST_ID>17</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;SELECT DELTA FROM  k2staging.k_cus_delta where iid = '5153527856' limit 1</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"LAST_NAME":"griffin","SIM":"9009227816906040","FIRST_NAME":"emeline"},"keys":{"SIM":"9009227816906040"},"values":{"LAST_NAME":"swift","SIM":"9009227816906040","FIRST_NAME":"tylor"},"targetTableName":"SIM_NAME"},"fromOrphanJob":false,"tableName":"PUBLIC_SIM_NAME"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami34" msdata:rowOrder="33">
+          <TEST_ID>17</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select iid_list from k2staging.k_cus_public_subscriber_k where id='4';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"IID_LIST":"5153527856"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami35" msdata:rowOrder="34">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;3388085361</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami36" msdata:rowOrder="35">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;4565454526</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami37" msdata:rowOrder="36">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;4299330246</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami38" msdata:rowOrder="37">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('401_10400','401_10401', '402_10400','403_10402')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"401_10401","IID_LIST":"@NULL@"},{"ID":"402_10400","IID_LIST":"@NULL@"},{"ID":"401_10400","IID_LIST":"@NULL@"},{"ID":"403_10402","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami39" msdata:rowOrder="38">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>6</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.contact set last_name='testing35' where contact_id =10400 and first_name='krysta' and last_name='lynn';true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami40" msdata:rowOrder="39">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>7</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('401_10400','401_10401', '402_10400','403_10402')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"401_10401","IID_LIST":"@NULL@"},{"ID":"402_10400","IID_LIST":"4565454526"},{"ID":"401_10400","IID_LIST":"3388085361"},{"ID":"403_10402","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami41" msdata:rowOrder="40">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>9</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select  delta from  k2staging.k_cus_delta where iid in ('3388085361','4565454526')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"lynn","FIRST_NAME":"krysta"},"keys":{"CONTACT_ID":10400},"values":{"LAST_NAME":"testing35","CONTACT_ID":10400},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"lynn","FIRST_NAME":"krysta"},"keys":{"CONTACT_ID":10400},"values":{"LAST_NAME":"testing35","CONTACT_ID":10400},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami42" msdata:rowOrder="41">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>8</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10400','10401', '10402')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10401","IID_LIST":"@NULL@"},{"ID":"10400","IID_LIST":"4565454526, 3388085361"},{"ID":"10402","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami43" msdata:rowOrder="42">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>10</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;insert into public.contact_link (customer_id, contact_id) values (403,10400);true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami44" msdata:rowOrder="43">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>18</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM CONTACT_LINK </TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOMER_ID":403,"CONTACT_ID":10402},{"CUSTOMER_ID":403,"CONTACT_ID":10400}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami45" msdata:rowOrder="44">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>19</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM CONTACT</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CONTACT_ID":10400,"FIRST_NAME":"testing35","LAST_NAME":"testing35"},{"CONTACT_ID":10402,"FIRST_NAME":"sima","LAST_NAME":"boyle"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami46" msdata:rowOrder="45">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>17</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;4299330246</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami47" msdata:rowOrder="46">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>12</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('401_10400','401_10401', '402_10400','403_10402','403_10400')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"401_10401","IID_LIST":"@NULL@"},{"ID":"402_10400","IID_LIST":"4565454526"},{"ID":"403_10402","IID_LIST":"@NULL@"},{"ID":"403_10400","IID_LIST":"4299330246"},{"ID":"401_10400","IID_LIST":"3388085361"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami48" msdata:rowOrder="47">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>11</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.contact set first_name='testing35' where contact_id =10400 and first_name='krysta' and last_name='testing35';true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami49" msdata:rowOrder="48">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>13</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10400','10401', '10402')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10402","IID_LIST":"@NULL@"},{"ID":"10401","IID_LIST":"@NULL@"},{"ID":"10400","IID_LIST":"4565454526, 3388085361"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami50" msdata:rowOrder="49">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>14</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select  delta from  k2staging.k_cus_delta where iid='4299330246'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"insert","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":true,"iidChanged":true,"isCrossIID":true,"orgOperation":null,"beforeValues":{},"keys":{"CUSTOMER_ID":403,"CONTACT_ID":10400},"values":{"CUSTOMER_ID":403,"CONTACT_ID":10400},"targetTableName":"CONTACT_LINK"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT_LINK"},
+{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"testing35","FIRST_NAME":"krysta"},"keys":{"CONTACT_ID":10400},"values":{"CONTACT_ID":10400,"FIRST_NAME":"testing35"},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami51" msdata:rowOrder="50">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10400','10401', '10402')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10401","IID_LIST":"@NULL@"},{"ID":"10400","IID_LIST":"@NULL@"},{"ID":"10402","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami52" msdata:rowOrder="51">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>15</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select  delta from  k2staging.k_cus_delta where iid='3388085361'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"fromOrphanJob":false,"dataChange":{"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"testing35","FIRST_NAME":"krysta"},"orgOperation":null,"isPKChanged":false,"logicalChildChanged":false,"keys":{"CONTACT_ID":10400},"values":{"CONTACT_ID":10400,"FIRST_NAME":"testing35"},"isCrossIID":false,"iidChanged":false,"targetTableName":"CONTACT","operation":"update","logicalPidChanged":false},"tableName":"PUBLIC_CONTACT"},{"fromOrphanJob":false,"dataChange":{"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"lynn","FIRST_NAME":"krysta"},"orgOperation":null,"isPKChanged":false,"logicalChildChanged":false,"keys":{"CONTACT_ID":10400},"values":{"CONTACT_ID":10400,"LAST_NAME":"testing35"},"isCrossIID":false,"iidChanged":false,"targetTableName":"CONTACT","operation":"update","logicalPidChanged":false},"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami53" msdata:rowOrder="52">
+          <TEST_ID>35</TEST_ID>
+          <TEST_STEP_ID>16</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select  delta from  k2staging.k_cus_delta where iid='4565454526'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"testing35","FIRST_NAME":"krysta"},"keys":{"CONTACT_ID":10400},"values":{"CONTACT_ID":10400,"FIRST_NAME":"testing35"},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},{"dataChange":{"operation":"replicate","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":true,"orgOperation":null,"beforeValues":{"CONTACT_ID":"10400"},"keys":{"CUSTOMER_ID":"402","CONTACT_ID":"10400"},"values":{},"targetTableName":"CONTACT_LINK"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT_LINK"},{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10400,"LAST_NAME":"lynn","FIRST_NAME":"krysta"},"keys":{"CONTACT_ID":10400},"values":{"LAST_NAME":"testing35","CONTACT_ID":10400},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami54" msdata:rowOrder="53">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;2241845121</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami55" msdata:rowOrder="54">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;8453088807</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami56" msdata:rowOrder="55">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('405_10410','405_10404','406_10405')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"405_10404","IID_LIST":"@NULL@"},{"ID":"405_10410","IID_LIST":"@NULL@"},{"ID":"406_10405","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami57" msdata:rowOrder="56">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10404','10405','10410')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10404","IID_LIST":"@NULL@"},{"ID":"10405","IID_LIST":"@NULL@"},{"ID":"10410","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami58" msdata:rowOrder="57">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_subscriber_k where id in ('404','405','410')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"404","IID_LIST":"@NULL@"},{"ID":"410","IID_LIST":"@NULL@"},{"ID":"405","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami59" msdata:rowOrder="58">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>6</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.contact set last_name='test37' where contact_id=10410 and first_name='ileen' and last_name='garza';true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami60" msdata:rowOrder="59">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>7</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('405_10410','405_10404','406_10405')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"405_10404","IID_LIST":"@NULL@"},{"ID":"405_10410","IID_LIST":"2241845121"},{"ID":"406_10405","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami61" msdata:rowOrder="60">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>8</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10404','10405','10410')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10404","IID_LIST":"@NULL@"},{"ID":"10405","IID_LIST":"@NULL@"},{"ID":"10410","IID_LIST":"2241845121"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami62" msdata:rowOrder="61">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>9</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging.k_cus_delta where iid='2241845121'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10410,"LAST_NAME":"garza","FIRST_NAME":"ileen"},"keys":{"CONTACT_ID":10410},"values":{"LAST_NAME":"test37","CONTACT_ID":10410},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami63" msdata:rowOrder="62">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>10</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;insert into public.contact_link (customer_id, contact_id) values(406,10410);true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami64" msdata:rowOrder="63">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>11</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.contact set first_name='test37' where contact_id=10410 and first_name='ileen' and last_name='test37';true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami65" msdata:rowOrder="64">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>14</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging.k_cus_delta where iid ='2241845121'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10410,"LAST_NAME":"test37","FIRST_NAME":"ileen"},"keys":{"CONTACT_ID":10410},"values":{"CONTACT_ID":10410,"FIRST_NAME":"test37"},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},{"dataChange":{"operation":"replicate","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":true,"orgOperation":null,"beforeValues":{"CONTACT_ID":"10410"},"keys":{"CUSTOMER_ID":"405","CONTACT_ID":"10410"},"values":{},"targetTableName":"CONTACT_LINK"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT_LINK"},{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10410,"LAST_NAME":"garza","FIRST_NAME":"ileen"},"keys":{"CONTACT_ID":10410},"values":{"LAST_NAME":"test37","CONTACT_ID":10410},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami66" msdata:rowOrder="65">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>15</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging.k_cus_delta where iid ='8453088807'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10410,"LAST_NAME":"test37","FIRST_NAME":"ileen"},"keys":{"CONTACT_ID":10410},"values":{"CONTACT_ID":10410,"FIRST_NAME":"test37"},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},{"dataChange":{"operation":"insert","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":true,"iidChanged":true,"isCrossIID":true,"orgOperation":null,"beforeValues":{},"keys":{"CUSTOMER_ID":406,"CONTACT_ID":10410},"values":{"CUSTOMER_ID":406,"CONTACT_ID":10410},"targetTableName":"CONTACT_LINK"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT_LINK"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami67" msdata:rowOrder="66">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>12</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('405_10410','405_10404','406_10405','406_10410');</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"405_10404","IID_LIST":"@NULL@"},{"ID":"405_10410","IID_LIST":"2241845121"},{"ID":"406_10405","IID_LIST":"@NULL@"},{"ID":"406_10410","IID_LIST":"8453088807"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami68" msdata:rowOrder="67">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>13</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10404','10405','10410')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10404","IID_LIST":"@NULL@"},{"ID":"10405","IID_LIST":"@NULL@"},{"ID":"10410","IID_LIST":"2241845121"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami69" msdata:rowOrder="68">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>16</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;8453088807</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami70" msdata:rowOrder="69">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>17</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM CONTACT_LINK</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CUSTOMER_ID":406,"CONTACT_ID":10405},{"CUSTOMER_ID":406,"CONTACT_ID":10410}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami71" msdata:rowOrder="70">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>18</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM CONTACT</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CONTACT_ID":10405,"LAST_NAME":"carson","FIRST_NAME":"sharen"},{"CONTACT_ID":10410,"LAST_NAME":"test37","FIRST_NAME":"test37"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami72" msdata:rowOrder="71">
+          <TEST_ID>37</TEST_ID>
+          <TEST_STEP_ID>19</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;SELECT * FROM CONTACT_SUBSCRIBER</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"CONTACT_ID":10405,"SUBSCRIBER_ID":405},{"CONTACT_ID":10410,"SUBSCRIBER_ID":410}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami73" msdata:rowOrder="72">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;8597436944</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami74" msdata:rowOrder="73">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;2220249445</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami75" msdata:rowOrder="74">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('408_10407','409_10408')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"408_10407","IID_LIST":"@NULL@"},{"ID":"409_10408","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami76" msdata:rowOrder="75">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10408','10407')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10407","IID_LIST":"@NULL@"},{"ID":"10408","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami77" msdata:rowOrder="76">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.contact set last_name = 'test38' where contact_id =10407 and first_name='dulcie' and last_name='cook';true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami78" msdata:rowOrder="77">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>6</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('408_10407','409_10408')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"408_10407","IID_LIST":"8597436944"},{"ID":"409_10408","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami79" msdata:rowOrder="78">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>7</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10408','10407')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10407","IID_LIST":"8597436944"},{"ID":"10408","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami80" msdata:rowOrder="79">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>9</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;insert into public.contact_link(customer_id,contact_id) values (409,10407);true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami81" msdata:rowOrder="80">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>10</TEST_STEP_ID>
+          <TEST_STEP_TYPE>SOURCE_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>CRM_DB;update public.contact set first_name = 'test38' where contact_id =10407 and first_name='dulcie' and last_name='test38';true</TEST_COMMAND>
+          <EXPECTED_RESULT>NULL</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami82" msdata:rowOrder="81">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>11</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_link_k where id in ('408_10407','409_10408','409_10407')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"408_10407","IID_LIST":"8597436944"},{"ID":"409_10408","IID_LIST":"@NULL@"},{"ID":"409_10407","IID_LIST":"2220249445"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami83" msdata:rowOrder="82">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>12</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging.k_cus_public_contact_k where id in ('10408','10407')</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"10407","IID_LIST":"8597436944, 2220249445"},{"ID":"10408","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami84" msdata:rowOrder="83">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>8</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging.k_cus_delta where iid='8597436944'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10407,"LAST_NAME":"cook","FIRST_NAME":"dulcie"},"keys":{"CONTACT_ID":10407},"values":{"LAST_NAME":"test38","CONTACT_ID":10407},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami85" msdata:rowOrder="84">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>13</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging.k_cus_delta where iid='8597436944'</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10407,"LAST_NAME":"cook","FIRST_NAME":"dulcie"},"keys":{"CONTACT_ID":10407},"values":{"LAST_NAME":"test38","CONTACT_ID":10407},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10407,"LAST_NAME":"test38","FIRST_NAME":"dulcie"},"keys":{"CONTACT_ID":10407},"values":{"CONTACT_ID":10407,"FIRST_NAME":"test38"},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},[{"dataChange":{"operation":"replicate","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":true,"orgOperation":null,"beforeValues":{"CONTACT_ID":"10407"},"keys":{"CUSTOMER_ID":"408","CONTACT_ID":"10407"},"values":{},"beforeValues":{"CONTACT_ID":"10407"},"targetTableName":"CONTACT_LINK"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT_LINK"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+        <trnDetailAutoIIDFTest_tami diffgr:id="trnDetailAutoIIDFTest_tami86" msdata:rowOrder="85">
+          <TEST_ID>38</TEST_ID>
+          <TEST_STEP_ID>14</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging.k_cus_delta where iid='2220249445';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"orgOperation":null,"beforeValues":{"CONTACT_ID":10407,"LAST_NAME":"test38","FIRST_NAME":"dulcie"},"keys":{"CONTACT_ID":10407},"values":{"CONTACT_ID":10407,"FIRST_NAME":"test38"},"targetTableName":"CONTACT"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT"},{"dataChange":{"operation":"insert","logicalPidChanged":false,"isPKChanged":false,"logicalChildChanged":true,"iidChanged":true,"isCrossIID":true,"orgOperation":null,"beforeValues":{},"keys":{"CUSTOMER_ID":409,"CONTACT_ID":10407},"values":{"CUSTOMER_ID":409,"CONTACT_ID":10407},"targetTableName":"CONTACT_LINK"},"fromOrphanJob":false,"tableName":"PUBLIC_CONTACT_LINK"}]</EXPECTED_RESULT>
+        </trnDetailAutoIIDFTest_tami>
+      </DocumentElement>
+    </diffgr:diffgram>
+  </TranslationData>
+  <DataRowsHeight>20</DataRowsHeight>
+</Translation>

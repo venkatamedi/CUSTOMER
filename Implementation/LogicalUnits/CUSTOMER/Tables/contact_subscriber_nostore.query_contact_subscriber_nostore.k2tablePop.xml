@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_contact_subscriber_nostore</ID>
+  <PopulationObjectName>query_contact_subscriber_nostore</PopulationObjectName>
+  <TableName>contact_subscriber_nostore</TableName>
+  <RootItemID>query_query_contact_subscriber_nostore</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>contact_subscriber_nostore</SourceTableName>
+    <SourceTableKey>subscriber_id,contact_id</SourceTableKey>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="subscriber_id" id="queryCol_0" dataType="Integer" index="0" />
+    <Arg name="contact_id" id="queryCol_1" dataType="Integer" index="1" />
+    <Arg name="subscriber_name" id="queryCol_2" dataType="Text" index="2" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_contact_subscriber_nostore" name="query_contact_subscriber_nostore" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="subscriber_id" dataType="Integer" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="contact_id" dataType="Integer" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="subscriber_name" dataType="Text" index="2" />
+      </OutputsList>
+      <SQL><![CDATA[Select *
+From public.contact_subscriber_nostore]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="10" fromNodeOrder="0" fromItemID="query_query_contact_subscriber_nostore" fromColID="queryCol_0" toItemID="contact_subscriber_nostore" toColID="tblCol_ade1f3cfaa79435892ede2e19db00d4c" />
+    <Link partId="11" fromNodeOrder="0" fromItemID="query_query_contact_subscriber_nostore" fromColID="queryCol_1" toItemID="contact_subscriber_nostore" toColID="tblCol_1351223dd7764846a46535b109bf165b" />
+    <Link partId="12" fromNodeOrder="0" fromItemID="query_query_contact_subscriber_nostore" fromColID="queryCol_2" toItemID="contact_subscriber_nostore" toColID="tblCol_21ccd62dfe1b44598f2df461f0b3bb15" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="contact_subscriber_nostore.query_contact_subscriber_nostore.k2tablePop.xml" lastPartID="20">
+      <TableNode partID="0" name="contact_subscriber_nostore" pos="383 5.854168" width="253" />
+      <DBQueryNode partID="6" name="CRM_DB" pos="10 0.890625" size="253 96.21875" isRoot="true">
+        <DBQuery>{"Name":"query_contact_subscriber_nostore","ID":"query_query_contact_subscriber_nostore","ConnName":"CRM_DB","SQL":"Select *\r\nFrom public.contact_subscriber_nostore","ColumnsList":[{"ID":"queryCol_0","Name":"subscriber_id","DataType":"Integer","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"contact_id","DataType":"Integer","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"subscriber_name","DataType":"Text","Index":2,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="10" from="0" to="1" pointsArr="263 36.9270859 273 36.9270859 313 37 333 37 373 36.89063 383 36.89063" fromNodePartID="6" fromNodeColumnName="subscriber_id" toNodePartID="0" toNodeColumnName="subscriber_id" />
+      <Link partID="11" from="2" to="3" pointsArr="263 49 273 49 313 49 333 49 373 48.9635429 383 48.9635429" fromNodePartID="6" fromNodeColumnName="contact_id" toNodePartID="0" toNodeColumnName="contact_id" />
+      <Link partID="12" from="4" to="5" pointsArr="263 61.0729141 273 61.0729141 313 61 333 61 373 61.0364571 383 61.0364571" fromNodePartID="6" fromNodeColumnName="subscriber_name" toNodePartID="0" toNodeColumnName="subscriber_name" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

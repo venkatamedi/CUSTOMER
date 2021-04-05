@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>sim_name</Name>
+  <ID>tbl_sim_name</ID>
+  <Columns>
+    <Column name="sim" id="tblCol_ff0fb3d8b9514e43adc6d3a6a8d65541" index="0" datatype="Text" mandatory="true" />
+    <Column name="first_name" id="tblCol_5cd9b63cedf54e82b5d8b7cfa7f85700" index="1" datatype="Text" />
+    <Column name="last_name" id="tblCol_129e540100fa45eea8c54205f346fbbe" index="2" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_ff0fb3d8b9514e43adc6d3a6a8d65541" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

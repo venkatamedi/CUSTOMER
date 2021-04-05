@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>mcc_country_crossiid</Name>
+  <ID>mcc_country_crossiid</ID>
+  <Version>6.2.3.2</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="mcc" id="tblCol_29a6f35af3dc47b29329c21f2c57f8cd" index="0" datatype="Text" mandatory="true" serializationName="mcc" />
+    <Column name="country" id="tblCol_8149bd8ef47b4db8b626ce872fcd7b00" index="1" datatype="Text" mandatory="true" serializationName="country" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_29a6f35af3dc47b29329c21f2c57f8cd" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

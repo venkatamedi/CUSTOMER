@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>case_note</Name>
+  <ID>tbl_case_note</ID>
+  <Columns>
+    <Column name="case_id" id="tblCol_00699144f94149158bc2b15164752011" index="0" datatype="Integer" mandatory="true" />
+    <Column name="note_id" id="tblCol_cb7d4f4917dc4d318ebe46d7a8f62da3" index="1" datatype="Integer" mandatory="true" />
+    <Column name="note_date" id="tblCol_927146be8df54542b924762159792a90" index="2" datatype="Text" />
+    <Column name="note_text" id="tblCol_9c8345f61e7448778a1be2c95cb457a6" index="3" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_00699144f94149158bc2b15164752011,tblCol_cb7d4f4917dc4d318ebe46d7a8f62da3" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Translation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>trnDetailAutoIIDFTest</Name>
+  <InputNotFoundAction>Use_Default</InputNotFoundAction>
+  <SchemaColumns>
+    <Column>
+      <Title>TEST_ID</Title>
+      <ColumnName>TEST_ID</ColumnName>
+      <Direction>Input</Direction>
+      <Type>Integer</Type>
+      <Length>3</Length>
+      <Format />
+      <Index>0</Index>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Column with the Actual test number(i.e.1,2..) MANDATORY</Comment>
+      <GridColumnProperties width="81" />
+    </Column>
+    <Column>
+      <Title>TEST_STEP_ID</Title>
+      <ColumnName>TEST_STEP_ID</ColumnName>
+      <Direction>Input</Direction>
+      <Type>Integer</Type>
+      <Length>3</Length>
+      <Format />
+      <Index>1</Index>
+      <DefaultValue />
+      <AllowNULL>false</AllowNULL>
+      <Comment>Column having the Test step ID for the current test(Sequenced in number, Can't skip the sequence for one particular test Id) MANDATORY</Comment>
+      <GridColumnProperties width="101" />
+    </Column>
+    <Column>
+      <Title>TEST_STEP_TYPE</Title>
+      <ColumnName>TEST_STEP_TYPE</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>50</Length>
+      <Format />
+      <Index>0</Index>
+      <DefaultValue>0</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>Should be the test purpose. eg: GET|SOURCE_QUERY|PRODUCER|TARGET_QUERY MANDATORY</Comment>
+      <GridColumnProperties width="120" />
+    </Column>
+    <Column>
+      <Title>TEST_COMMAND</Title>
+      <ColumnName>TEST_COMMAND</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>500</Length>
+      <Format />
+      <Index>1</Index>
+      <DefaultValue>0</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>As Required for executing the preceding step id for test case, IF GET - LUNAME(MANDATORY);INSTANCE_ID(MANDATORY) || IF PRODUCER - sql Statement(MANDATORY);LUNAME(MANDATORY) || IF SOURCE_QUERY - Source Interface(MANDATORY);Source sql Statement(MANDATORY); Produce ind(MANDATORY)(True if need to produce trx to kafka, else false);LUNAME - If Produce ind is true and LU NAME was not provided then LU NAME from last get is used, If Produce ind is true and no previous Get before this step then LU NAME is mandatory. If Produce ind is true and LU NAME input provided it will always be used. || IF TARGET QUERY - Interface(MANDATORY);Select sql(MANDATORY)</Comment>
+      <GridColumnProperties width="1032" />
+    </Column>
+    <Column>
+      <Title>EXPECTED_RESULT</Title>
+      <ColumnName>EXPECTED_RESULT</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>5000</Length>
+      <Format />
+      <Index>2</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <Comment>EXPECTED_JSON output based on the last step from TEST_COMMAND(MANDATORY - If user wants to validate TARGET QUERY).</Comment>
+      <GridColumnProperties width="132" />
+    </Column>
+    <Column>
+      <Title>ACTIVE</Title>
+      <ColumnName>ACTIVE</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Boolean</Type>
+      <Length>1</Length>
+      <Format />
+      <Index>3</Index>
+      <DefaultValue>True</DefaultValue>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>false</AllowNULL>
+      <Comment>ACTIVE TEST</Comment>
+      <GridColumnProperties width="48" />
+    </Column>
+  </SchemaColumns>
+  <IsImportFromSQL>false</IsImportFromSQL>
+  <IsDynamicData>false</IsDynamicData>
+  <DynamicDbConnName />
+  <DynamicSqlQuery />
+  <ColumnMapping />
+  <TranslationData>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="trnDetailAutoIIDFTest" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="trnDetailAutoIIDFTest">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TEST_ID" type="xs:long" />
+                  <xs:element name="TEST_STEP_ID" type="xs:long" />
+                  <xs:element name="TEST_STEP_TYPE">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TEST_COMMAND">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EXPECTED_RESULT" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5000" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ACTIVE" type="xs:boolean" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+      <DocumentElement>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest1" msdata:rowOrder="0">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>1</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;2793908390</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest2" msdata:rowOrder="1">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>2</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select MCC,MNC from MCC_MNC_QUOTES where MCC =  '344' and MNC = '879';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"MCC":"344","MNC":"879"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest3" msdata:rowOrder="2">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>3</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;9245324306</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest4" msdata:rowOrder="3">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>4</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select MCC,MNC from MCC_MNC_QUOTES where MCC =  '371' and MNC = '211';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"MCC":"371","MNC":"211"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest5" msdata:rowOrder="4">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>5</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id,iid_list from k2staging_6_2_iidf_test_63.k_cus_public_mcc_mnc_k where id = '371211751302083';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"371211751302083","IID_LIST":"@NULL@"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest6" msdata:rowOrder="5">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>6</TEST_STEP_ID>
+          <TEST_STEP_TYPE>PRODUCER</TEST_STEP_TYPE>
+          <TEST_COMMAND>UPDATE PUBLIC.MCC_MNC_QUOTES set  "QUOTE"= 'TEST' where MCC =  '371' and MNC = '211';CUSTOMER;false</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest7" msdata:rowOrder="6">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>7</TEST_STEP_ID>
+          <TEST_STEP_TYPE>PRODUCER</TEST_STEP_TYPE>
+          <TEST_COMMAND>UPDATE PUBLIC.MCC_MNC_QUOTES set  "QUOTE"= 'TEST2' where MCC =  '344' and MNC = '879';CUSTOMER;false</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest8" msdata:rowOrder="7">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>8</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id,iid_list from k2staging_6_2_iidf_test_63.k_cus_public_mcc_mnc_k where id in ('371211751302083','344879150390625');</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"344879150390625","IID_LIST":"2793908390"},{"ID":"371211751302083","IID_LIST":"9245324306"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest9" msdata:rowOrder="8">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>9</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging_6_2_iidf_test_63.k_cus_delta where iid  = '2793908390';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","tablespace":"PUBLIC","table":"MCC_MNC_QUOTES","keys":{"MCC":"344","MNC":"879"},"values":{"QUOTE":"TEST2","MNC":"879","MCC":"344"},"beforeValues":{"MCC":"344","MNC":"879"},"logicalPidChanged":false,"isPKChanged":false,"beforeKeys":{"MCC":"344","MNC":"879"},"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"oldTableName":"PUBLIC.MCC_MNC_QUOTES","orgOperation":null,"targetIid":null,"customSql":null,"params":null,"isSOR":false,"targetTableName":"MCC_MNC_QUOTES","schema":"CUSTOMER"},"luName":"CUSTOMER","luAlias":"CUS","iid":null,"childrenKeys":[],"childColumns":[],"currentId":"344_879","children":[],"pid":"MCC_344_MNC_879","fromOrphanJob":false}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest10" msdata:rowOrder="9">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>10</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging_6_2_iidf_test_63.k_cus_delta where iid  = '9245324306';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","tablespace":"PUBLIC","table":"MCC_MNC_QUOTES","keys":{"MCC":"371","MNC":"211"},"values":{"QUOTE":"TEST","MNC":"211","MCC":"371"},"beforeValues":{"MCC":"371","MNC":"211"},"logicalPidChanged":false,"isPKChanged":false,"beforeKeys":{"MCC":"371","MNC":"211"},"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"oldTableName":"PUBLIC.MCC_MNC_QUOTES","orgOperation":null,"targetIid":null,"customSql":null,"params":null,"isSOR":false,"targetTableName":"MCC_MNC_QUOTES","schema":"CUSTOMER"},"luName":"CUSTOMER","luAlias":"CUS","iid":null,"childrenKeys":[],"childColumns":[],"currentId":"371_211","children":[],"pid":"MCC_371_MNC_211","fromOrphanJob":false}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest11" msdata:rowOrder="10">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>11</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;9245324306</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest12" msdata:rowOrder="11">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>12</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select QUOTE from MCC_MNC_QUOTES where MCC =  '371' and MNC = '211'; </TEST_COMMAND>
+          <EXPECTED_RESULT>[{"QUOTE":"TEST"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest13" msdata:rowOrder="12">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>13</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;2793908390</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest14" msdata:rowOrder="13">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>14</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select QUOTE from MCC_MNC_QUOTES where MCC =  '344' and MNC = '879';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"QUOTE":"TEST2"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest15" msdata:rowOrder="14">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>15</TEST_STEP_ID>
+          <TEST_STEP_TYPE>PRODUCER</TEST_STEP_TYPE>
+          <TEST_COMMAND>UPDATE PUBLIC.MCC_MNC set MNC = '879',  MCC =  '371' where IMSI = '344879150390625';CUSTOMER;false</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest16" msdata:rowOrder="15">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>16</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging_6_2_iidf_test_63.k_cus_public_contract_k where id in ('1696','1672');</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"1696","IID_LIST":"2793908390"},{"ID":"1672","IID_LIST":"9245324306"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest17" msdata:rowOrder="16">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>17</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging_6_2_iidf_test_63.k_cus_public_subscriber_k where id in ('1696','1672');</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"1696","IID_LIST":"2793908390"},{"ID":"1672","IID_LIST":"9245324306"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest18" msdata:rowOrder="17">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>18</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id, iid_list from k2staging_6_2_iidf_test_63.k_cus_public_mcc_mnc_k where id in ('371211751302083','344879150390625');</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"371211751302083","IID_LIST":"2793908390"},{"ID":"344879150390625","IID_LIST":"9245324306"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest19" msdata:rowOrder="18">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>19</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select IID,DELTA from k2staging_6_2_iidf_test_63.k_cus_delta where id  = '2793908390';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","tablespace":"PUBLIC","table":"MCC_MNC","keys":{"IMSI":"344879150390625"},"values":{"IMSI":"344879150390625","MNC":"879","MCC":"371"},"beforeValues":{"IMSI":"344879150390625"},"logicalPidChanged":false,"isPKChanged":false,"beforeKeys":{"IMSI":"344879150390625"},"logicalChildChanged":true,"iidChanged":true,"isCrossIID":false,"oldTableName":"PUBLIC.MCC_MNC","orgOperation":null,"targetIid":null,"customSql":null,"params":null,"isSOR":false,"targetTableName":"MCC_MNC","schema":"CUSTOMER"},"luName":"CUSTOMER","luAlias":"CUS","iid":null,"childrenKeys":[["879"],["371","879"],["371"]],"childColumns":[["MNC"],["MCC","MNC"],["MCC"]],"currentId":"344879150390625","children":[{"combined":"MNC_879"},{"combined":"MCC_371_MNC_879"},{"combined":"MCC_371"}],"pid":"IMSI_344879150390625","fromOrphanJob":false}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest20" msdata:rowOrder="19">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>20</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select IID,DELTA from k2staging_6_2_iidf_test_63.k_cus_delta where id  = '9245324306';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"replicate","tablespace":"PUBLIC","table":"MCC_MNC","keys":{"IMSI":"371211751302083"},"values":{},"beforeValues":{"MCC":"371"},"logicalPidChanged":false,"isPKChanged":false,"beforeKeys":{},"logicalChildChanged":false,"iidChanged":false,"isCrossIID":false,"oldTableName":"MCC_MNC","orgOperation":null,"targetIid":"2793908390","customSql":null,"params":null,"pos":"00000000020030806864","isSOR":false,"targetTableName":"MCC_MNC","schema":"PUBLIC"},"luName":"CUSTOMER","luAlias":null,"iid":null,"childrenKeys":[],"childColumns":[],"currentId":"371211751302083","children":[],"pid":"IMSI_371211751302083","fromOrphanJob":false}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest21" msdata:rowOrder="20">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>21</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;9245324306</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest22" msdata:rowOrder="21">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>22</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;2793908390</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest23" msdata:rowOrder="22">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>23</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select MCC,MNC from MCC_MNC where IMSI = '344879150390625';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"MCC":"371","MNC":"879"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest24" msdata:rowOrder="23">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>24</TEST_STEP_ID>
+          <TEST_STEP_TYPE>PRODUCER</TEST_STEP_TYPE>
+          <TEST_COMMAND>UPDATE PUBLIC.MCC_MNC_QUOTES SET MCC = '371',"QUOTE"='SUCCESS',MNC='879' where MCC = '371' and MNC = '211';CUSTOMER;false</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest25" msdata:rowOrder="24">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>25</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging_6_2_iidf_test_63.k_cus_delta where iid = '2793908390';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"insert","tablespace":"PUBLIC","table":"MCC_MNC_QUOTES","keys":{"MCC":"371","MNC":"879"},"values":{"QUOTE":"SUCCESS","MNC":"879","MCC":"371"},"beforeValues":{"MCC":"371","MNC":"211"},"logicalPidChanged":true,"isPKChanged":true,"beforeKeys":{"MCC":"371","MNC":"211"},"logicalChildChanged":false,"iidChanged":true,"isCrossIID":false,"oldTableName":"PUBLIC.MCC_MNC_QUOTES","orgOperation":"update","targetIid":null,"customSql":null,"params":null,"isSOR":false,"targetTableName":"MCC_MNC_QUOTES","schema":"CUSTOMER"},"luName":"CUSTOMER","luAlias":"CUS","iid":null,"childrenKeys":[],"childColumns":[],"currentId":"371_879","children":[],"pid":"MCC_371_MNC_879","fromOrphanJob":false}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest26" msdata:rowOrder="25">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>26</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select delta from k2staging_6_2_iidf_test_63.k_cus_delta where iid = '9245324306';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"dataChange":{"operation":"update","tablespace":"PUBLIC","table":"MCC_MNC_QUOTES","keys":{"MCC":"371","MNC":"211"},"values":{"QUOTE":"SUCCESS","MNC":"879","MCC":"371"},"beforeValues":{"MCC":"371","MNC":"211"},"logicalPidChanged":true,"isPKChanged":true,"beforeKeys":{"MCC":"371","MNC":"211"},"logicalChildChanged":false,"iidChanged":true,"isCrossIID":false,"oldTableName":"PUBLIC.MCC_MNC_QUOTES","orgOperation":null,"targetIid":null,"customSql":null,"params":null,"isSOR":false,"targetTableName":"MCC_MNC_QUOTES","schema":"CUSTOMER"},"luName":"CUSTOMER","luAlias":"CUS","iid":null,"childrenKeys":[],"childColumns":[],"currentId":"371_879","children":[],"pid":"MCC_371_MNC_879","fromOrphanJob":false}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest27" msdata:rowOrder="26">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>27</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>dbCassandra;select id from k2staging_6_2_iidf_test_63.k_cus_iid_info where id in ('2793908390','9245324306');</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"ID":"2793908390"},{"ID":"9245324306"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest28" msdata:rowOrder="27">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>28</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;9245324306</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest29" msdata:rowOrder="28">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>29</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select MCC,MNC from MCC_MNC_QUOTES where MCC = '371' and MNC ='211';</TEST_COMMAND>
+          <EXPECTED_RESULT>[]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest30" msdata:rowOrder="29">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>30</TEST_STEP_ID>
+          <TEST_STEP_TYPE>GET</TEST_STEP_TYPE>
+          <TEST_COMMAND>CUSTOMER;2793908390</TEST_COMMAND>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+        <trnDetailAutoIIDFTest diffgr:id="trnDetailAutoIIDFTest31" msdata:rowOrder="30">
+          <TEST_ID>9</TEST_ID>
+          <TEST_STEP_ID>31</TEST_STEP_ID>
+          <TEST_STEP_TYPE>TARGET_QUERY</TEST_STEP_TYPE>
+          <TEST_COMMAND>fabric;select MCC,MNC from MCC_MNC_QUOTES where MCC = '371' and MNC ='879';</TEST_COMMAND>
+          <EXPECTED_RESULT>[{"MCC":"371","MNC":"879"}]</EXPECTED_RESULT>
+          <ACTIVE>true</ACTIVE>
+        </trnDetailAutoIIDFTest>
+      </DocumentElement>
+    </diffgr:diffgram>
+  </TranslationData>
+  <DataRowsHeight>20</DataRowsHeight>
+</Translation>

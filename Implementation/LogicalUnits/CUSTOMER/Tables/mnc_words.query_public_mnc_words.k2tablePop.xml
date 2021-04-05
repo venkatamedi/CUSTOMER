@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_public_mnc_words</ID>
+  <PopulationObjectName>query_public_mnc_words</PopulationObjectName>
+  <TableName>mnc_words</TableName>
+  <RootItemID>query_query_public_mnc_words</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp>
+    <ProactiveIndicator>true</ProactiveIndicator>
+    <DbInterface>CRM_DB</DbInterface>
+    <SourceSchema>public</SourceSchema>
+    <SourceTableName>mnc_words</SourceTableName>
+    <SourceTableKey>mnc</SourceTableKey>
+    <StoreData>false</StoreData>
+  </IidFinderProp>
+  <InputArguments>
+    <Arg name="mnc" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="word" id="queryCol_1" dataType="Text" index="1" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_mnc_words" name="query_public_mnc_words" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="CRM_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="mnc" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="word" dataType="Text" index="1" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM public.mnc_words]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="8" fromNodeOrder="0" fromItemID="query_query_public_mnc_words" fromColID="queryCol_0" toItemID="tbl_mnc_words" toColID="tblCol_806f59edd21a4baf88c0d3e1a82cb20e" />
+    <Link partId="9" fromNodeOrder="0" fromItemID="query_query_public_mnc_words" fromColID="queryCol_1" toItemID="tbl_mnc_words" toColID="tblCol_1b451cb0e0ef47ab8cd8a510b3c5b9d5" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="mnc_words.query_public_mnc_words.k2tablePop.xml" lastPartID="15">
+      <TableNode partID="0" name="mnc_words" pos="383 5.890629" width="253" />
+      <DBQueryNode partID="5" name="CRM_DB" pos="10 0.9270859" size="253 84.14583" isRoot="true">
+        <DBQuery>{"Name":"query_public_mnc_words","ID":"query_query_public_mnc_words","ConnName":"CRM_DB","SQL":"SELECT * FROM public.mnc_words","ColumnsList":[{"ID":"queryCol_0","Name":"mnc","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"word","DataType":"Text","Index":1,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="8" from="0" to="1" pointsArr="263 36.9635429 273 36.9635429 313 37 333 37 373 36.9270859 383 36.9270859" fromNodePartID="5" fromNodeColumnName="mnc" toNodePartID="0" toNodeColumnName="mnc" />
+      <Link partID="9" from="2" to="3" pointsArr="263 49.03646 273 49.03646 313 49 333 49 373 49 383 49" fromNodePartID="5" fromNodeColumnName="word" toNodePartID="0" toNodeColumnName="word" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>
